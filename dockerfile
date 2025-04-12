@@ -16,4 +16,4 @@ COPY . /app/
 EXPOSE 8000
 
 # Command to run Gunicorn
-CMD ["gunicorn", "your_project_name.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000"]
