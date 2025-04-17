@@ -5,8 +5,13 @@ services:
     build: .
     container_name: django_app
     command: "gunicorn portfolio.wsgi:application --bind 0.0.0.0:8000"
-    volumes:
-      - .:/portfolio
     ports:
       - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - static_volume:/app/staticfiles
+    restart: always
 
+volumes:
+  static_volume:
