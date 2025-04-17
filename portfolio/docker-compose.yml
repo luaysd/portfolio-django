@@ -13,5 +13,5 @@ services:
       - static_volume:/app/staticfiles
     restart: always
 
-# volumes:
-#   static_volume:
+volumes:
+  static_volume:
