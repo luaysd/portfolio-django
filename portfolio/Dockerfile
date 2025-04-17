@@ -1,19 +1,25 @@
 FROM python:3.10
 
-# Set the working directory inside the container
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV DJANGO_SETTINGS_MODULE=portfolio.settings
+
+# Set the working directory
 WORKDIR /app
 
-# Copy the requirements file
-COPY requirements.txt /app/
-
 # Install dependencies
+COPY requirements.txt /app/
 RUN pip install -r requirements.txt
 
-# Copy the rest of the project files
+# Copy project files
 COPY . /app/
+
+# Collect static files
 RUN python manage.py collectstatic --noinput
-# Expose port 8000 for Django
+
+# Expose Django port
 EXPOSE 8000
 
-# Command to run Gunicorn
+# Run the app with Gunicorn
 CMD ["gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000"]
