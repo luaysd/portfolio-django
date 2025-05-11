@@ -1,3 +1,5 @@
+
+{% load static %}
 <header>
     <nav>
         <ul>
@@ -53,7 +55,33 @@
     </div>
 </section>
 
-<section id="skills" class="section fade-in">
+<section class="section new-skills fad-in" id="skills">
+      <article class="wrapper">
+        {% for item in  wrapperTimes %}
+        <div class="marquee {% if   forloop.counter == 2  %}marquee--reverse{% endif %}">
+            {% for item in  wrapperTimes %}
+          <div class="marquee__group" {% if   forloop.counter == 2 %} aria-hidden="true"{% endif %} >
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" alt="Angular">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+            <img src="https://www.svgrepo.com/show/353657/django-icon.svg" alt="Django">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQL">
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </article>
+</section>
+{% comment %} <section id="skills" class="section fade-in">
     <div class="container">
         <h2>Skills</h2>
         <div class="skills-container">
@@ -79,20 +107,39 @@
             </div>
         </div>
     </div>
-</section>
+</section> {% endcomment %}
 
 <section id="projects" class="section fade-in">
     <div class="container">
         <h2>Projects</h2>
         <div class="projects-container">
-            <div class="project-card">
-                <h3>Project 1</h3>
-                <p>A modern web app built with React, Node.js, and MongoDB.</p>
-            </div>
+            <a href="https://hair-salon.oncloudlb.com/home" target="_blank" class="card-link">
+                <div class="card">
+                  <img src="{% static 'images/projects/hair-salon.jpg' %}" alt="Project Image" class="card-img">
+                  <div class="card-content">
+                    <h3 class="card-title">Spa and Hair Salon Reservation</h3>
+                    <p class="card-description">A modern web app built with Vue js.</p>
+                  </div>
+                </div>
+              </a>
+            <a  href="#home" class="card-link">
+                <div class="card">
+                  <img src="{% static 'images/projects/portfolio.jpg' %}" alt="Project Image" class="card-img">
+                  <div class="card-content">
+                    <h3 class="card-title">Personal Portfolio</h3>
+                    <p class="card-description">A portfolio website built using Django.</p>
+                  </div>
+                </div>
+              </a>
+            {% comment %} <a href="https://hair-salon.oncloudlb.com/home" target="_blank" class="project-card">
+                <img style="max-width:100%" src="{% static 'images/projects/hair-salon.png' %}" alt="Hair Salon">
+                <h3>Spa and Hair Salon Reservation</h3>
+                <p>A modern web app built with Vue js.</p>
+            </a>
             <div class="project-card">
                 <h3>Project 2</h3>
                 <p>Mobile app built using Flutter, integrating with a RESTful API.</p>
-            </div>
+            </div> {% endcomment %}
         </div>
     </div>
 </section>
