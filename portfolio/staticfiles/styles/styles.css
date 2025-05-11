@@ -456,7 +456,8 @@ body.dark-theme {
     background: var(--color-bg-accent);
     aspect-ratio: 16/9;
     padding: calc(var(--size) / 10);
-    border-radius: 0.5rem; }
+    border-radius: 0.5rem;
+    height: 100%; }
   .new-skills .marquee--vertical svg {
     aspect-ratio: 1;
     width: calc(var(--size) / 1.5);
