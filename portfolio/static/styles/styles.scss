@@ -64,6 +64,7 @@ nav ul li a:hover {
     color: silver;
     font-size: 2.5rem;
     font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: inline;
 
 }
 
@@ -386,9 +387,10 @@ a:hover {
 
     display: flex;
   flex-wrap: wrap;  /* Allow wrapping when there's not enough space */
-  justify-content: flex-start;
-    // gap: 20px; /* Optional: spacing between items */
-    span{
+  justify-content: center;
+    gap: 5px; /* Optional: spacing between items */
+    // max-width: 50%;
+    li{
         // flex: 1 1 auto;  /* Items can grow and shrink based on content */
         // min-width: 100px;  /* Minimum width to avoid too narrow items */
         padding: 8px 16px;
