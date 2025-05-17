@@ -20,6 +20,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path("robots.txt", views.robots_txt),
     path('', views.index_view, name='index'),
     path('admin/', admin.site.urls)
 ]
