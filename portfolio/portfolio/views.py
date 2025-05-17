@@ -11,3 +11,8 @@ def robots_txt(request):
     with open(path, 'r') as f:
         content = f.read()
     return HttpResponse(content, content_type='text/plain')
+def sitemap_xml(request):
+    path = os.path.join(settings.STATIC_ROOT or settings.STATICFILES_DIRS[0], 'sitemap.xml')
+    with open(path, 'r') as f:
+        content = f.read()
+    return HttpResponse(content, content_type='text/plain')

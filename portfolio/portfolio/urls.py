@@ -21,6 +21,7 @@ from . import views
 
 urlpatterns = [
     path("robots.txt", views.robots_txt),
+    path("sitemap.xml", views.sitemap_xml),
     path('', views.index_view, name='index'),
     path('admin/', admin.site.urls)
 ]
