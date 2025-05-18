@@ -9,5 +9,6 @@ services:
       - .:/portfolio
     ports:
       - "8000:8000"
-environment:
-  - DJANGO_DEBUG=False
+    environment:
+      - DJANGO_DEBUG=False
+
