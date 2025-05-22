@@ -19,4 +19,4 @@ COPY . /app/
 EXPOSE 8000 
 
 # Run the app with Gunicorn
-CMD ["sh", "-c", "python manage.py collectstatic --noinput ", "&& gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["sh", "-c", "python manage.py collectstatic --noinput --clear ", "&& gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000"]
