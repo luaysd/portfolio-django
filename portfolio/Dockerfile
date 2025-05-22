@@ -16,9 +16,10 @@ RUN pip install -r requirements.txt
 COPY . /app/
 
 # Collect static files
+RUN python manage.py collectstatic --noinput
 
 # Expose Django port
-EXPOSE 8000
+EXPOSE 8000 
 
 # Run the app with Gunicorn
 CMD ["gunicorn", "portfolio.wsgi:application", "--bind", "0.0.0.0:8000"]
