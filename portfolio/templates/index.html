@@ -38,7 +38,13 @@
     }
   }
   </script>
-    <link rel="stylesheet" href="{% sass_src  'styles/styles.scss' %}">
+    {% if debug %}
+      <!-- Dev: load SCSS directly, compiled on-demand -->
+      <link href="{% sass_src 'styles/styles.scss' %}" rel="stylesheet">
+    {% else %}
+      <!-- Prod: load precompiled CSS -->
+      <link href="{% static 'styles/styles.css' %}" rel="stylesheet">
+  {% endif %}
     <!-- Include Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <script src="{% static 'js/index.js' %}" defer></script>

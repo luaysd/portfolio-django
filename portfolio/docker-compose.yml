@@ -1,12 +1,12 @@
-version: '3.8'
+
 
 services:
   web:
     build: .
     container_name: django_app
     # command: "gunicorn portfolio.wsgi:application --bind 0.0.0.0:8000"
-    volumes:
-      - .:/portfolio
+    # volumes:
+    #   - .:/portfolio
     ports:
       - "8000:8000"
     environment:

@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index_view(request):
-  return render(request, "index.html",{'wrapperTimes': range(2)})
+  return render(request, "index.html",{'wrapperTimes': range(2), 'debug': settings.DEBUG})
 
 def robots_txt(request):
     path = os.path.join(settings.STATIC_ROOT or settings.STATICFILES_DIRS[0], 'robots.txt')
