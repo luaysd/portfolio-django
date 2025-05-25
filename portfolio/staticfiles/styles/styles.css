@@ -319,8 +319,6 @@ body.dark-theme {
   color: #f39c12; }
 
 .tags {
-  display: block;
-  color: red;
   display: flex;
   flex-wrap: wrap;
   /* Allow wrapping when there's not enough space */
