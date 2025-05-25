@@ -1,0 +1,44 @@
+# Python virtual environment folder
+portfolio-env/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+media/
+staticfiles/
+
+# If you have local settings or secret files:
+local_settings.py
+.env
+
+# VSCode or other IDE files:
+.vscode/
+.idea/
+
+# MacOS system files
+.DS_Store
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# pytest cache
+.pytest_cache/
+
+# mypy cache
+.mypy_cache/
+
+# celerybeat-schedule file
+celerybeat-schedule
+
+# backups or other folders you want to exclude
+backup/
